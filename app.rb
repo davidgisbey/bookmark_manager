@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/bookmarks.rb'
+require './lib/bookmark.rb'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
@@ -7,6 +7,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
+    @bookmarks = BookMark.new.print
     erb :bookmarks
   end
 
