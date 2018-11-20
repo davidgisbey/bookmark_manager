@@ -7,8 +7,7 @@ describe BookMark do
     expect(bookmark).to respond_to(:list)
   end
 
-  it "list's the bookmarks with the format integer boomark ie.
-  1. website" do
+  it "list's the bookmarks on the /bookmark route" do
     expect(bookmark.print).to include("http://www.google.com")
   end
 
