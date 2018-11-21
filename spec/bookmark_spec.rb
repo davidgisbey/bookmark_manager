@@ -1,14 +1,14 @@
 require 'bookmark'
 
+
 describe BookMark do
-  let(:bookmark) { BookMark.new }
+  describe '.all' do
+    it 'returns a list of bookmarks' do
+      bookmarks = BookMark.all
 
-  it 'Can show a list of bookmarks' do
-    expect(bookmark).to respond_to(:list)
+      expect(bookmarks).to include "http://www.makersacademy.com"
+      expect(bookmarks).to include "http://www.destroyallsoftware.com"
+      expect(bookmarks).to include "http://www.google.com"
+    end
   end
-
-  it "list's the bookmarks on the /bookmark route" do
-    expect(bookmark.print).to include("http://www.google.com")
-  end
-
 end
